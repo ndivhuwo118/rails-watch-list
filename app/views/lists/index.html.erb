@@ -1,0 +1,18 @@
+<h1>All Lists</h1>
+
+
+<% if @lists.any? %>
+<ul>
+<% @lists.each do |list| %>
+  <li>
+  <%= link_to list.name, list_path(list) %>
+  </li>
+  <% end %>
+  </ul>
+  <% else %>
+  <p>No lists available. Create one!</p>
+  <% end %>
+  <div>
+</div>
+  <%= link_to 'New List', new_list_path, class: 'btn btn-primary' %>
+
