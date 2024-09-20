@@ -1,0 +1,10 @@
+<h1> List Show </h1>
+ <h1><%= @list.name %></h2>
+
+ <% @list.bookmarks.each do |bookmark| %>
+  <p>
+    <strong><%= bookmark.movie.title %></strong>
+    <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+
